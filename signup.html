@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+		<script>
+	function validate()
+	{
+		var fname=document.getElementsByName('fname')[0];
+		var lname=document.getElementsByName('lname')[0];
+		var email=document.getElementsByName('email')[0];
+		var mobile=document.getElementsByName('mobile')[0];
+		var password=document.getElementsByName('password')[0];
+		
+		
+		if(fname.value=='')
+		{
+			alert('please enter First Name');
+			fname.focus();
+			return false;
+		}
+		
+		if(!(/^\w+[a-z]*[A-z_]*$/.test(fname.value)))
+		{
+			alert('please enter valid First Name');
+			fname.focus();
+			return false;
+		}
+
+		
+	 if(lname.value=='')
+		{
+			alert('please enter Last Name');
+			lname.focus();
+			return false;
+		}
+		
+		if(!(/^\w+[a-z]*[A-Z_]*$/.test(lname.value)))
+		{
+			alert('please enter valid Last Name');
+			lname.focus();
+			return false;
+		}
+
+		
+	if(email.value=='')
+		{
+			alert('please enter E-mail ID\n eg:abc@gmail.com');
+			email.focus();
+			return false;
+		}
+		
+		if(!(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email.value)))
+		{
+			alert('please enter valid Email ID');
+			email.focus();
+			return false;
+		}
+		
+		 
+		if(mobile.value=='')
+		{
+			alert('please enter Mobile No');
+			mobile.focus();
+			return false;
+		}
+	
+		
+		if((/^\w+[a-zA-Z]+$/.test(mobile.value)))
+		{
+			alert('please enter valid Mobile No');
+			mobile.focus();
+			return false;
+		}
+		
+		if(mobile.value.length<10 ||mobile.value.length>10)
+		{
+			alert('please enter valid Mobile NO (10 Digit Number)');
+			mobile.focus();
+			return false;
+		}
+				
+		
+		if(password.value=='')
+		{
+			alert('please enter Password (characters should be more then 8 letters)');
+			password.focus();
+			return false;
+		}
+		
+		if(password.value.length<8)
+		{
+			alert('please enter valid password (password should be atleast 8 characters) ');
+			password.focus();
+			return false;
+		}
+		
+		
+		
+			return true;
+	}	
+		
+	</script>
+
+	<head>
+		<link rel="stylesheet" href="signup.css">
+	</head>
+		
+		
+		
+		
+		
+		
+		
+	<body>
+		<form action="/Git/login.html" method="POST" onsubmit="return validate()">
+		 
+		 <center>
+		 <div class="signup-box">
+		 	<b><u><h2>SIGNUP</h2></b></u>
+		 <div class="textbox">
+		 
+		 <table border="1">
+		<tr>
+			<td><i class="fas fa-user"></i>&nbsp;&nbsp;<B>First Name  &nbsp;&nbsp;&nbsp;<input type="text" name="fname"><br><br>
+			</td>
+		</tr>
+		</div>
+		<div class="textbox">
+		<tr>
+			<td><i class="fas fa-user"></i>&nbsp;&nbsp;<B>Last Name  &nbsp;&nbsp;&nbsp;<input type="text" name="lname"><br><br>
+			</td>
+		</tr>
+		</div>
+		<div class="textbox">
+		<tr>
+			<td><i class="fas fa-envelope"></i>&nbsp;&nbsp;<B>Email  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="email"><br><br>
+			</td>
+		</tr>
+		</div>
+		<div class="textbox">
+		<tr>
+			<td><i class="fas fa-mobile"></i>&nbsp;&nbsp;<B>Mobile  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="mobile"><br><br>
+			</td>
+		</tr>
+		</div>
+		<div class="textbox">
+		<tr>
+			<td><i class="fas fa-lock"></i>&nbsp;&nbsp;<B>Password  &nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password"><br><br>
+			</td>
+		</tr>
+		</div>
+
+		</table><br>
+		<input type="submit" class="btn" name="submit "value="submit">
+		</div>
+		</form>
+	</body>
+	
+</html>		

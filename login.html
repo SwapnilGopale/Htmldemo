@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+		<script>
+
+		function validate()
+		{
+			var email=document.getElementsByName('email')[0];
+			var password=document.getElementsByName('password')[0];
+	
+			if (email.value=='')
+			{
+				alert('please enter Email Id');
+				email.focus();
+				return false;
+			}
+			
+			if(!(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(email.value)))
+			{
+				alert('please enter valid Email ID');
+				email.focus();
+				return false;
+
+			}
+
+			if (password.value=='')
+			{
+				alert('please enter Password');
+				password.focus();
+				return false;
+			}
+			
+			if(password.value.length<8)
+			{
+				alert('please enter valid Password (8 chars)');				
+				password.focus();
+				return false;
+			}
+
+			return true;
+
+		}
+
+	</script>
+
+	<head>
+		<link rel="stylesheet" href="/Git/login.css">
+	</head>
+		
+	<body>
+		<form action="index.html" method="POST" onsubmit="return validate()">
+		 
+		 <center>
+		 <div class="signup-box">
+		 	<b><u><h2>LOGIN</h2></b></u>
+		 <div class="textbox">
+		 
+		 <table border="5">
+		 
+			<td><i class="fas fa-envelope"></i>&nbsp;&nbsp;<B>Email  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="email"><br><br>
+			</td>
+		</tr>
+		</div>
+		<div class="textbox">
+		<tr>
+			
+			<td><i class="fas fa-lock"></i>&nbsp;&nbsp;<B>Password  &nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password"><br><br>
+			</td>
+		</tr>
+		</div>
+
+		</table><br>
+		<input type="submit" class="btn" name="submit "value="submit"><br><br><br><br>
+		</div>
+		<b><a href=signup.html>Sign UP</a></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	
+		</form>
+	</body>
+	
+</html>		
